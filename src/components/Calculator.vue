@@ -2,8 +2,8 @@
   <div class="calculator">
     <div class="display">{{current || 0}}</div>
     <div class="btn" @click="clear">C</div>
-    <div class="btn">+/-</div>
-    <div class="btn">%</div>
+    <div class="btn" @click="sign">+/-</div>
+    <div class="btn" @click="percent">%</div>
     <div class="btn operator">÷</div>
     <div class="btn">7</div>
     <div class="btn">8</div>
@@ -27,12 +27,18 @@
 export default {
   data() {
     return {
-      current: '123',
+      current: '600',
     }
   },
   methods: {
     clear() {
       this.current = '';
+    },
+    sign() {
+      this.current = -this.current;
+    },
+    percent() {
+      this.current = parseInt(this.current / 100);
     },
   }
 }
