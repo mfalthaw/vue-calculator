@@ -5,19 +5,19 @@
     <div class="btn" @click="sign">+/-</div>
     <div class="btn" @click="percent">%</div>
     <div class="btn operator">÷</div>
-    <div class="btn">7</div>
-    <div class="btn">8</div>
-    <div class="btn">9</div>
+    <div class="btn" @click="append(7)">7</div>
+    <div class="btn" @click="append(8)">8</div>
+    <div class="btn" @click="append(9)">9</div>
     <div class="btn operator">x</div>
-    <div class="btn">4</div>
-    <div class="btn">5</div>
-    <div class="btn">6</div>
+    <div class="btn" @click="append(4)">4</div>
+    <div class="btn" @click="append(5)">5</div>
+    <div class="btn" @click="append(6)">6</div>
     <div class="btn operator">-</div>
-    <div class="btn">1</div>
-    <div class="btn">2</div>
-    <div class="btn">3</div>
+    <div class="btn" @click="append(1)">1</div>
+    <div class="btn" @click="append(2)">2</div>
+    <div class="btn" @click="append(3)">3</div>
     <div class="btn operator">+</div>
-    <div class="btn zero">0</div>
+    <div class="btn zero" @click="append">0</div>
     <div class="btn">.</div>
     <div class="btn operator">=</div>
   </div>
@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      current: '600',
+      current: '123',
     }
   },
   methods: {
@@ -38,8 +38,12 @@ export default {
       this.current = -this.current;
     },
     percent() {
-      this.current = parseInt(this.current / 100);
+      this.current = this.current / 100;
     },
+    append(num) {
+      var currentStr = `${this.current}`;
+      this.current = parseFloat(currentStr + num);
+    }
   }
 }
 </script>
