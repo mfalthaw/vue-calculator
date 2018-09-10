@@ -39,7 +39,8 @@ export default {
 
 .display {
   grid-column: 1/5;
-  background-color: red;
+  background-color: #333;
+  color: white;
 }
 
 .zero {
@@ -48,7 +49,7 @@ export default {
 
 .btn {
   background-color: #eee;
-  border: 1px solid #333;
+  border: 1px solid #999;
 }
 
 .operator {
